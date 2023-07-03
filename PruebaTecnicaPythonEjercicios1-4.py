@@ -13,8 +13,6 @@ cantidadArticulosImporte = df.groupby('fecha').agg({'articulo' : 'size', 'import
 
 print(cantidadArticulosImporte)
 
-
-
 #punto 3
 
 #Primero creo una lista de condiciones booleanas y luego una lista de opciones. Despues, con la libreria numpy hago un where donde si se cumple tal condicion se toma en cuenta tal opcion
@@ -28,8 +26,6 @@ df['Sector'] = np.where(condiciones[0],opciones[0],np.where(condiciones[1],opcio
 
 print(df)
 
-
-
 #punto 4
 #Primero creo una pivot table y uso la funcion dt.strftime para agruparlos por mes y que tenga la estructura de (ago-20)
 #luego de asignar la columna y los valores hago un aggfunc para calcular el promedio y la suma
@@ -41,16 +37,4 @@ resultado.columns = [f"{sector} {tipo}" for tipo in ['sumaImporte', 'promedioPre
 resultado = resultado.sort_index(axis=1)
 resultado.index.name = None
 
-
-
 print(resultado)
-
-
-
-
-
-
-
-
-
-# %%
